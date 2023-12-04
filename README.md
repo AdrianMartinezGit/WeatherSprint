@@ -5,4 +5,8 @@ Adrian Martinez
 <br>
 Weather Sprint
 <br>
-Create a weather app with assigned figma 
+Create a Weather App with Assigned Figma 
+<br>
+<br>
+Day 1 - Start Building
+<br>

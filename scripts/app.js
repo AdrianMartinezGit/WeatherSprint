@@ -4,6 +4,7 @@ var lat = 0.0;
 var lon = 0.0;
 
 let testparagraph = document.getElementById("test");
+
 function GeoAPICall() {
     let city_name = "Antioch";
     let state_code = "CA";
@@ -48,3 +49,15 @@ function ApiCall(latitude, longitude) {
 }
 
 GeoAPICall();
+
+function ConvertToFahrenheit() {
+    // Get Current Temperature
+    // Use Formula of F = Temperature x 1.8000 + 32.00
+    // Return Value
+}
+
+function ConvertToCelsius() {
+    // Get Current Temperature
+    // Use Formula of C = Temperature - 32.00 % 1.8000
+    // Return Value
+}

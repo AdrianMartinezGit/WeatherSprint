@@ -17,7 +17,7 @@ function errorFunc(error) {
 }
 
 // Test Paragraph Variable
-let testparagraph = document.getElementById("test");
+//let testparagraph = document.getElementById("test");
 
 // Weather API Call
 function ApiCall(latitude, longitude) {
@@ -31,7 +31,7 @@ function ApiCall(latitude, longitude) {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        testparagraph.innerText = JSON.stringify(data);
+        //testparagraph.innerText = JSON.stringify(data);
     })
     
 }

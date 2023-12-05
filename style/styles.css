@@ -13,7 +13,7 @@ body {
 
 .search-box {
     width: 600px;
-    background: #fff;
+    background: #F3CAF1;
     margin: 40px auto 0;
     border-radius: 20px;
 }
@@ -31,7 +31,7 @@ body {
     border: 0;
     outline: 0;
     font-size: 18px;
-    color: #333;
+    color: #600B0B;
 }
 
 .search-box button {
@@ -46,19 +46,22 @@ body {
 }
 .search-box button .fa-solid {
     width: 50px;
-    color: #555;
+    color: #600B0B;
     font-size: 22px;
     cursor: pointer;
 }
 ::placeholder {
-    color: #555;
+    color: #600B0B;
 }
 .result-box ul {
     border-top: 1px solid #999;
     padding: 15px 10px;
 }
 .result-box ul li {
+    color: #600B0B;
     list-style: none;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
     border-radius: 3px;
     padding: 15px 10px;
     cursor: pointer;
@@ -67,6 +70,30 @@ body {
     background: #e9f3ff;
 }
 .result-box {
+    background: #E6E2DC;
     max-height: 450px;
-    overflow-y: scroll;
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
+}
+
+h1 {
+    color: #F3CAF1;
+    font-size: 60px;
+    padding: 50px;
+    text-align: center;
+    text-shadow: 4px 1px 4px rgba(0, 0, 0, 25%);
+}
+
+.footer {
+    bottom: 0;
+    color: #F3CAF1;
+    font-size: 32px;
+    align-items: end;
+    text-align: center;
+    text-shadow: 4px 1px 4px rgba(0, 0, 0, 25%);
+
+    position: fixed;     
+    text-align: center;    
+    bottom: 50px; 
+    width: 100%;
 }

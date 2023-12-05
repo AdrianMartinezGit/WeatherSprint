@@ -51,11 +51,15 @@ function ConvertToCelsius() {
 }
 
 // Save City to Local Storage
-function AddCityToFavorites() {
+function AddCityToFavorites(cityName) {
 
 }
 
 // Remove City from Local Storage
-function RemoveCityFromFavorites() {
+function RemoveCityFromFavorites(cityName) {
+
+}
+
+function ChangeTempIcon(id) {
 
 }

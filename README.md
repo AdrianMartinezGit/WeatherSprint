@@ -17,3 +17,14 @@ Created file structure and layout of Website, will implement rest tomorrow
 Input Functionality will also be implemented tomorrow
 <br>
 Client had left notes on Figma, so will only contact Client for things that aren't fully covered
+<br>
+<br>
+Day 2:
+<br>
+Correctly grabbed API Data from console log
+<br>
+Implemented home page for website, will add favorites and forecast page tomorrow
+<br>
+Input Functionality was added, Searchbar fully functioning, Dropdown needing more work
+<br>
+Custom Storage Functions Created, though still needing work

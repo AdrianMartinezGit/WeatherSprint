@@ -3,8 +3,8 @@ locationName.innerText = GetCitySessionStorage();
 
 function GetCitySessionStorage() {
     if (typeof(Storage) !== "undefined") {
-        if (sessionStorage.tempCitySearch) {
-          return sessionStorage.tempCitySearch;
+        if (localStorage.tempCitySearch) {
+          return localStorage.tempCitySearch;
         }
     }
 }

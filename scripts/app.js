@@ -80,14 +80,14 @@ function RemoveCityFromFavorites(cityName) {
 
 function SetCitySessionStorage(cityName) {
     if (typeof(Storage) !== "undefined") {
-        sessionStorage.tempCitySearch = cityName;
+        localStorage.tempCitySearch = cityName;
     }
 }
 
 function GetCitySessionStorage() {
     if (typeof(Storage) !== "undefined") {
-        if (sessionStorage.tempCitySearch) {
-          return sessionStorage.tempCitySearch;
+        if (localStorage.tempCitySearch) {
+          return localStorage.tempCitySearch;
         }
     }
 }

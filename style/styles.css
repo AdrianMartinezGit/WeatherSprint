@@ -96,13 +96,58 @@ h1 {
     bottom: 50px; 
     width: 100%;
 }
-.dropdown, .dropdown button, .dropdown ul  {
-    width: 160px;
+.slide-box {
+    height: 100%;
+    width: 640px;
+    position: absolute;
+    background-color: #F3CAF1;
+    /*transition: 0.3s ease-out;*/
+    transform: translateX(-640px);
+    border-right: 10px solid black;
 }
-.dropdown button {
+.slide-box h1 {
+    padding-top: 85px;
+    color:#600B0B;
+    text-shadow: none;
+    text-align: end;
+}
+.slide ul {
+    padding-top: 50px;
+}
+.slide-box ul li {
+    padding-top: 10px;
+    padding-left: 30px;
+    color: #600B0B;
+    font-size: 24px;
+    list-style: none;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+
+.check-box {
+    width: 128px;
+    height: 128px;
+}
+.toggle {
+    position: absolute;
     height: 160px;
-}
-.dropdown button {
+    width: 160px;
+    z-index: 1;
+    left: 25px;
+    top: 40px;
     background: #B7B7B7;
-    border-radius: 25px;
+    border-radius: 30px;
+}
+.toggle img {
+    margin: 15px;
+    cursor: pointer;
+}
+#toggle-button {
+    display: none;
+}
+#toggle-button:checked ~ .slide-box {
+    transform: translateX(0);
+}
+#toggle-button:checked ~ .toggle {
+    background: #b7b7b700;
 }

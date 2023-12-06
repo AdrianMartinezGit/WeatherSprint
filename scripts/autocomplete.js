@@ -1,8 +1,8 @@
 let availableKeyWords = [
-    "Antioch",
-    "Airport",
-    "Austin",
-    "Avenue"
+    "Antioch, California, United States",
+    "Airport, California, United States",
+    "Austin, California, United States",
+    "Avenue, California, United States"
 ];
 
 const resultsBox = document.querySelector('.result-box');

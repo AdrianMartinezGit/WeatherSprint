@@ -37,17 +37,27 @@ function ApiCall(latitude, longitude) {
 }
 
 // Convert from C to F
-function ConvertToFahrenheit() {
+function ConvertToFahrenheit(value) {
     // Get Current Temperature
     // Use Formula of F = Temperature x 1.8000 + 32.00
     // Return Value
+
+    let temporaryTemp = value;
+    let calculatedVal = ((temporaryTemp * 1.8000) + 32.00);
+
+    return calculatedVal;
 }
 
 // Convert from F to C
-function ConvertToCelsius() {
+function ConvertToCelsius(value) {
     // Get Current Temperature
     // Use Formula of C = Temperature - 32.00 % 1.8000
     // Return Value
+
+    let temporaryTemp = value;
+    let calculatedVal = ((temporaryTemp - 32.00) / 1.8000);
+
+    return calculatedVal;
 }
 
 // Save City to Local Storage
@@ -60,6 +70,16 @@ function RemoveCityFromFavorites(cityName) {
 
 }
 
-function ChangeTempIcon(id) {
+function SetCitySessionStorage(cityName) {
+    if (typeof(Storage) !== "undefined") {
+        sessionStorage.tempCitySearch = cityName;
+    }
+}
 
+function GetCitySessionStorage(cityName) {
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.tempCitySearch) {
+          return sessionStorage.tempCitySearch;
+        }
+    }
 }

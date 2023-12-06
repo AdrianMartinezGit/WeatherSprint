@@ -28,3 +28,14 @@ Implemented home page for website, will add favorites and forecast page tomorrow
 Input Functionality was added, Searchbar fully functioning, Dropdown needing more work
 <br>
 Custom Storage Functions Created, though still needing work
+<br>
+<br>
+Day 3:
+<br>
+Saved Cities List Layout added
+<br>
+Started designing Forecast Page, will complete tomorrow
+<br>
+Formula for converting either temperature metrics added
+<br>
+Dropdown menu for forecast page is being planned

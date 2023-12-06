@@ -2,11 +2,21 @@ let availableKeyWords = [
     "Antioch, California, United States",
     "Airport, California, United States",
     "Austin, California, United States",
-    "Avenue, California, United States"
+    "Avenue, California, United States",
+    "Los Angeles, California, United States"
 ];
 
 const resultsBox = document.querySelector('.result-box');
 const inputBox   = document.getElementById('input-box');
+
+let searchButton = document.getElementById('search-button');
+
+searchButton.addEventListener('click', function() {    
+    if (inputBox.value != "") {
+        SetCitySessionStorage(inputBox.value);
+        location.href = "./pages/forecast.html";
+    }
+});
 
 inputBox.onkeyup = function() {
     let result = [];
@@ -38,4 +48,18 @@ function display(result) {
 function SelectInput(list) {
     inputBox.value = list.innerHTML;
     resultsBox.innerHTML = "";
+}
+
+function SetCitySessionStorage(cityName) {
+    if (typeof(Storage) !== "undefined") {
+        sessionStorage.tempCitySearch = cityName;
+    }
+}
+
+function GetCitySessionStorage() {
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.tempCitySearch) {
+          return sessionStorage.tempCitySearch;
+        }
+    }
 }

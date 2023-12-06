@@ -62,12 +62,20 @@ function ConvertToCelsius(value) {
 
 // Save City to Local Storage
 function AddCityToFavorites(cityName) {
-
+    if (typeof(Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+      } else {
+        // Sorry! No Web Storage support..
+      }
 }
 
 // Remove City from Local Storage
 function RemoveCityFromFavorites(cityName) {
-
+    if (typeof(Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+      } else {
+        // Sorry! No Web Storage support..
+      }
 }
 
 function SetCitySessionStorage(cityName) {
@@ -76,7 +84,7 @@ function SetCitySessionStorage(cityName) {
     }
 }
 
-function GetCitySessionStorage(cityName) {
+function GetCitySessionStorage() {
     if (typeof(Storage) !== "undefined") {
         if (sessionStorage.tempCitySearch) {
           return sessionStorage.tempCitySearch;

@@ -12,6 +12,7 @@ html, body {
 
 body {
     background-image: url('../assets/background.webp');
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -110,7 +111,7 @@ h2 {
 .slide-box {
     height: 100%;
     width: 640px;
-    position: absolute;
+    position: fixed;
     background-color: #F3CAF1;
     /*transition: 0.3s ease-out;*/
     transform: translateX(-640px);
@@ -134,13 +135,11 @@ h2 {
     text-decoration-line: underline;
     text-underline-offset: 3px;
 }
-
 #forecast-location {
     padding: 100px;
     text-align: center;
     width: 1366px;
 }
-
 .check-box {
     width: 128px;
     height: 128px;
@@ -168,14 +167,14 @@ h2 {
 #toggle-button:checked ~ .toggle {
     background: #b7b7b700;
 }
-
 .forecast-box {
     width: 1300px;
-    height: 853px;
+    height: 850px;
     border: 5px solid black;
     background: #F3CAF1;
     overflow-y: auto;
     overflow-x: hidden;
+    margin: auto;
 }
 
 .forecast-box h1 {
@@ -185,6 +184,12 @@ h2 {
     font-size: 60px;
     padding: 0px;
     font-family: 'Fauna One';
+}
+
+.forecast-day-box {
+    border: 5px solid black;
+    background: #F3CAF1;
+    height: 420px;
 }
 
 .forecast-box p {
@@ -200,4 +205,22 @@ h2 {
     width: 160px;
     padding-top: 40px;
     margin: auto;
+}
+
+.toggle-full {
+    position: fixed;
+    height: 640px;
+    width: 160px;
+    z-index: 1;
+    left: 25px;
+    top: 40px;
+    background: #B7B7B7;
+    border-radius: 30px;
+}
+#toggle-button:checked ~ .toggle-full {
+    background: #b7b7b700;
+}
+.toggle-full img {
+    margin: 15px;
+    cursor: pointer;
 }

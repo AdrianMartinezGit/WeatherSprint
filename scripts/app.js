@@ -1,6 +1,8 @@
 // Import API Key from Environment JS File
 import { apiKey } from "./environment.js";
 
+
+
 // Ask User for Permission to Use Current Position
 navigator.geolocation.getCurrentPosition(success, errorFunc);
 

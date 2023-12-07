@@ -24,40 +24,12 @@ function ApiCall(latitude, longitude) {
     let lat = latitude;
     let lon = longitude;
 
-    console.log(lat);
-    console.log(lon);
-
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        //testparagraph.innerText = JSON.stringify(data);
     })
     
-}
-
-// Convert from C to F
-function ConvertToFahrenheit(value) {
-    // Get Current Temperature
-    // Use Formula of F = Temperature x 1.8000 + 32.00
-    // Return Value
-
-    let temporaryTemp = value;
-    let calculatedVal = ((temporaryTemp * 1.8000) + 32.00);
-
-    return calculatedVal;
-}
-
-// Convert from F to C
-function ConvertToCelsius(value) {
-    // Get Current Temperature
-    // Use Formula of C = Temperature - 32.00 % 1.8000
-    // Return Value
-
-    let temporaryTemp = value;
-    let calculatedVal = ((temporaryTemp - 32.00) / 1.8000);
-
-    return calculatedVal;
 }
 
 // Save City to Local Storage

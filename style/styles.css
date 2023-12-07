@@ -5,10 +5,14 @@
     font-family: 'Quando', serif;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-image: url('../assets/background.webp');
     background-size: cover;
-    overflow: hidden;
 }
 
 .search-box {
@@ -83,6 +87,13 @@ h1 {
     text-align: center;
     text-shadow: 4px 1px 4px rgba(0, 0, 0, 25%);
 }
+h2 {
+    color: #F3CAF1;
+    text-align: center;
+    padding: 25px;
+    font-size: 60px;
+    text-shadow: 4px 1px 4px rgba(0, 0, 0, 25%);
+}
 
 .footer {
     bottom: 0;
@@ -124,6 +135,12 @@ h1 {
     text-underline-offset: 3px;
 }
 
+#forecast-location {
+    padding: 100px;
+    text-align: center;
+    width: 1366px;
+}
+
 .check-box {
     width: 128px;
     height: 128px;
@@ -150,4 +167,37 @@ h1 {
 }
 #toggle-button:checked ~ .toggle {
     background: #b7b7b700;
+}
+
+.forecast-box {
+    width: 1300px;
+    height: 853px;
+    border: 5px solid black;
+    background: #F3CAF1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.forecast-box h1 {
+    color: #600B0B;
+    text-shadow: none;
+    text-align: center;
+    font-size: 60px;
+    padding: 0px;
+    font-family: 'Fauna One';
+}
+
+.forecast-box p {
+    color: #600B0B;
+    text-shadow: none;
+    font-family: 'Fauna One';
+    text-align: center;
+    font-size: 40px;
+    padding: 0px;
+}
+
+.forecast-img {
+    width: 160px;
+    padding-top: 40px;
+    margin: auto;
 }

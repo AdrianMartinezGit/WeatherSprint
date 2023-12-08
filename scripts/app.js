@@ -36,17 +36,3 @@ function RemoveCityFromFavorites(cityName) {
         // Sorry! No Web Storage support..
       }
 }
-
-function SetCitySessionStorage(cityName) {
-    if (typeof(Storage) !== "undefined") {
-        localStorage.tempCitySearch = cityName;
-    }
-}
-
-function GetCitySessionStorage() {
-    if (typeof(Storage) !== "undefined") {
-        if (localStorage.tempCitySearch) {
-          return localStorage.tempCitySearch;
-        }
-    }
-}

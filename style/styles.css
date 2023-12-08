@@ -159,7 +159,7 @@ h2 {
     margin: 15px;
     cursor: pointer;
 }
-#toggle-button, #back-to-top-button {
+#toggle-button, #back-to-top-button, #metric-button, #favorite-button {
     display: none;
 }
 #toggle-button:checked ~ .slide-box {

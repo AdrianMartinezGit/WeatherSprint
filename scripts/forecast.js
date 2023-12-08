@@ -19,6 +19,10 @@ let metricButton = document.getElementById('metric-button');
 
 let tempMetricValue = false;
 
+if (localStorage.getItem('metric_letter')) {
+  tempMetricValue = localStorage.getItem('metric_letter');
+}
+
 SetCurrentWeather();
 
 const today = new Date();
@@ -44,19 +48,33 @@ function GetCitySessionStorage() {
 }
 
 function ConvertUnixToLocal(time) {
-  let date = new Date(time * 1000);
-  
-  let hours   = date.getHours();
-  let minutes = date.getMinutes();
+  let date = new Date(time * 1000),
+		hHours = date.getHours(),
+		hours = hHours,
+		minutes = ('0' + date.getMinutes()).slice(-2),
+		ampm = 'AM',
+		timeDate;
+			
+	if (hHours > 12) {
+		hours = hHours - 12;
+		ampm = 'PM';
+	} else if (hHours === 12) {
+		hours = 12;
+		ampm = 'PM';
+	} else if (hHours == 0) {
+		hours = 12;
+	}
 
-  return `${hours}:${minutes}`;
+  timeDate = `${hours}:${minutes} ${ampm}`
+		
+	return timeDate;
 }
 
 async function SetCurrentWeather() {
   let city_name = GetCitySessionStorage();
+
   let metric_val = 'metric';
   let metric_letter = "C";
-
   document.getElementById('metric-img').innerHTML = "<img src='../assets/icons/C_Temp.webp' class='img-menu metric-btn'>";
 
   if (tempMetricValue == true) {
@@ -64,6 +82,8 @@ async function SetCurrentWeather() {
     document.getElementById('metric-img').innerHTML = "<img src='../assets/icons/F_Temp.webp' class='img-menu metric-btn'>";
     metric_letter = "F";
   }
+
+  localStorage.setItem('metric_letter', tempMetricValue);
 
   const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${apiKey}&units=${metric_val}`);
   var data = await promise.json();

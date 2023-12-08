@@ -18,19 +18,26 @@
                 <input type="checkbox" id="toggle-button">
                 <div class="toggle-full">
                   <label for="toggle-button" class="toggle-label">
-                    <img src="../assets/Icons/DropdownMenu.webp">
+                    <img src="../assets/Icons/DropdownMenu.webp" class="img-menu toggle-btn">
                   </label>
 
                   <label for="" class="favorite-label">
-                    <img src="../assets/Icons/StarEmpty.webp">
+                    <img src="../assets/Icons/StarEmpty.webp" class="img-menu favorite-btn">
                   </label>
 
                   <label for="" class="temp-metric-label">
-                    <img src="../assets/Icons/F_Temp.webp">
+                    <img src="../assets/Icons/F_Temp.webp" class="img-menu">
                   </label>
 
-                  <label for="">
-                    <img src="../assets/Icons/BackToTop.webp">
+                  <button id="back-to-top-button" onclick="window.location.href='#'""></button>
+                  <label for="back-to-top-button" class="back-to-top-label">
+                    <img src="../assets/Icons/BackToTop.webp" class="img-menu">
+                  </label>
+                </div>
+
+                <div class="toggle-full-alt">
+                  <label for="toggle-button" class="togglel-label">
+                    <img src="../assets/Icons/Close.webp" class="img-menu toggle-btn">
                   </label>
                 </div>
         
@@ -84,6 +91,7 @@
                 </div>
 
                 <h2 id="date-text-mm-dd" style="padding-top: 100px; padding-bottom: 0px;">Five Day Forecast from</h2>
+                
                 <div class="forecast-box">
                     <div class="row">
                         <div class="col forecast-day-box">

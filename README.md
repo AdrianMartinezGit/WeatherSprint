@@ -7,6 +7,8 @@ Weather Sprint
 <br>
 Create a Weather App with Assigned Figma 
 <br>
+Peer reviewed by: (Xavier Hopkins) Your weather app loooks really good! the website is almost entirely functional. Try to fix up your favorites tab, and your data validation when searching for a city. Overall, great job man!!!
+<br>
 <br>
 Day 1 - Start Building:
 <br>
@@ -51,3 +53,12 @@ Implemented dropdown page, still needs to be fixed
 <br>
 <br>
 Day 5 (Final Day):
+Layout fully implemented
+<br>
+5-day forecast functioning
+<br>
+API Calls functioning and sending out result
+<br>
+Favorite Functionality in Saved Cities needs work
+<br>
+Search results need work with displaying no cities when input can't be parsed 

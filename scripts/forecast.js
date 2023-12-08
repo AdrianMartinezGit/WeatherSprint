@@ -47,7 +47,7 @@ function GetCitySessionStorage() {
       }
 }
 
-function ConvertUnixToLocal(time) {
+function ConvertUnixToLocalTime(time) {
   let date = new Date(time * 1000),
 		hHours = date.getHours(),
 		hours = hHours,
@@ -70,7 +70,19 @@ function ConvertUnixToLocal(time) {
 	return timeDate;
 }
 
+function ConvertUnixToLocalDate(time) {
+  let date = new Date(time * 1000),
+		month = ('0' + (date.getMonth() + 1)).slice(-2),
+		day = ('0' + date.getDate()).slice(-2),
+    timeDate;
+	
+	timeDate = `${month} / ${day}`;
+		
+	return timeDate;
+}
+
 async function SetCurrentWeather() {
+  // Part One
   let city_name = GetCitySessionStorage();
 
   let metric_val = 'metric';
@@ -93,7 +105,7 @@ async function SetCurrentWeather() {
   locationName.innerText = `${data.name}, ${data.sys.country}`;
   currentTempNum.innerText = `${Math.floor(data.main.temp)}° ${metric_letter}`;
   currentTempMisc.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}° ${metric_letter}<br>H: ${Math.floor(data.main.temp_max)}° ${metric_letter} / L: ${Math.floor(data.main.temp_min)}° ${metric_letter}<br>Humidity: ${Math.floor(data.main.humidity)}%`;
-  currentTempSun.innerHTML  = `Sunrise: ${ConvertUnixToLocal(data.sys.sunrise)}<br>Sunset: ${ConvertUnixToLocal(data.sys.sunset)}`;
+  currentTempSun.innerHTML  = `Sunrise: ${ConvertUnixToLocalTime(data.sys.sunrise)}<br>Sunset: ${ConvertUnixToLocalTime(data.sys.sunset)}`;
 
   let rainVolume = 0;
 
@@ -102,6 +114,18 @@ async function SetCurrentWeather() {
   }
 
   currentTempCloud.innerHTML = `Wind: ${data.wind.speed} mph<br>Cloudiness: ${data.clouds.all}%<br>Chance of rain: ${rainVolume}%`
+
+  // Part Two
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&appid=${apiKey}&units=${metric_val}`);
+  var value    = await response.json();
+
+  console.log(value);
+
+  forecastDayOne.innerHTML   = `${ConvertUnixToLocalDate(value.list[4].dt)}<br>${value.list[4].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[4].rain['3h']}%<br>Humidity: ${value.list[4].main.humidity}%<br>Cloudiness: ${value.list[4].clouds.all}%`;
+  forecastDayTwo.innerHTML   = `${ConvertUnixToLocalDate(value.list[12].dt)}<br>${value.list[12].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[12].rain['3h']}%<br>Humidity: ${value.list[12].main.humidity}%<br>Cloudiness: ${value.list[12].clouds.all}%`;
+  forecastDayThree.innerHTML = `${ConvertUnixToLocalDate(value.list[20].dt)}<br>${value.list[20].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[20].rain['3h']}%<br>Humidity: ${value.list[20].main.humidity}%<br>Cloudiness: ${value.list[20].clouds.all}%`;
+  forecastDayFour.innerHTML  = `${ConvertUnixToLocalDate(value.list[28].dt)}<br>${value.list[28].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[28].rain['3h']}%<br>Humidity: ${value.list[28].main.humidity}%<br>Cloudiness: ${value.list[28].clouds.all}%`;
+  forecastDayFive.innerHTML  = `${ConvertUnixToLocalDate(value.list[36].dt)}<br>${value.list[36].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[36].rain['3h']}%<br>Humidity: ${value.list[36].main.humidity}%<br>Cloudiness: ${value.list[36].clouds.all}%`;
 }
 
 metricButton.addEventListener('click', function() {

@@ -110,7 +110,7 @@ async function SetCurrentWeather() {
   let rainVolume = 0;
 
   if (data.clouds.rain) {
-    rainVolume = data.clouds.rain;
+    rainVolume = data.clouds.rain['3h'].toString();
   }
 
   currentTempCloud.innerHTML = `Wind: ${data.wind.speed} mph<br>Cloudiness: ${data.clouds.all}%<br>Chance of rain: ${rainVolume}%`
@@ -121,11 +121,43 @@ async function SetCurrentWeather() {
 
   console.log(value);
 
-  forecastDayOne.innerHTML   = `${ConvertUnixToLocalDate(value.list[4].dt)}<br>${value.list[4].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[4]}%<br>Humidity: ${value.list[4].main.humidity}%<br>Cloudiness: ${value.list[4].clouds.all}%`;
-  forecastDayTwo.innerHTML   = `${ConvertUnixToLocalDate(value.list[12].dt)}<br>${value.list[12].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[12]}%<br>Humidity: ${value.list[12].main.humidity}%<br>Cloudiness: ${value.list[12].clouds.all}%`;
-  forecastDayThree.innerHTML = `${ConvertUnixToLocalDate(value.list[20].dt)}<br>${value.list[20].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[20]}%<br>Humidity: ${value.list[20].main.humidity}%<br>Cloudiness: ${value.list[20].clouds.all}%`;
-  forecastDayFour.innerHTML  = `${ConvertUnixToLocalDate(value.list[28].dt)}<br>${value.list[28].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[28]}%<br>Humidity: ${value.list[28].main.humidity}%<br>Cloudiness: ${value.list[28].clouds.all}%`;
-  forecastDayFive.innerHTML  = `${ConvertUnixToLocalDate(value.list[36].dt)}<br>${value.list[36].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${value.list[36]}%<br>Humidity: ${value.list[36].main.humidity}%<br>Cloudiness: ${value.list[36].clouds.all}%`;
+  let dayOne, dayTwo, dayThree, dayFour, dayFive;
+
+  if (value.list[4].rain) {
+    dayOne = value.list[4].rain['3h'];
+  } else {
+    dayOne = 0;
+  }
+
+  if (value.list[12].rain) {
+    dayTwo = value.list[12].rain['3h'];
+  } else {
+    dayTwo = 0;
+  }
+
+  if (value.list[20].rain) {
+    dayThree = value.list[20].rain['3h'];
+  } else {
+    dayThree = 0;
+  }
+
+  if (value.list[28].rain) {
+    dayFour = value.list[28].rain['3h'];
+  } else {
+    dayFour = 0;
+  }
+
+  if (value.list[36].rain) {
+    dayFive = value.list[36].rain['3h'];
+  } else {
+    dayFive = 0;
+  }
+
+  forecastDayOne.innerHTML   = `${ConvertUnixToLocalDate(value.list[4].dt)}<br>${value.list[4].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${dayOne}%<br>Humidity: ${value.list[4].main.humidity}%<br>Cloudiness: ${value.list[4].clouds.all}%`;
+  forecastDayTwo.innerHTML   = `${ConvertUnixToLocalDate(value.list[12].dt)}<br>${value.list[12].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${dayTwo}%<br>Humidity: ${value.list[12].main.humidity}%<br>Cloudiness: ${value.list[12].clouds.all}%`;
+  forecastDayThree.innerHTML = `${ConvertUnixToLocalDate(value.list[20].dt)}<br>${value.list[20].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${dayThree}%<br>Humidity: ${value.list[20].main.humidity}%<br>Cloudiness: ${value.list[20].clouds.all}%`;
+  forecastDayFour.innerHTML  = `${ConvertUnixToLocalDate(value.list[28].dt)}<br>${value.list[28].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${dayFour}%<br>Humidity: ${value.list[28].main.humidity}%<br>Cloudiness: ${value.list[28].clouds.all}%`;
+  forecastDayFive.innerHTML  = `${ConvertUnixToLocalDate(value.list[36].dt)}<br>${value.list[36].main.feels_like}° ${metric_letter} At Noon<br>Rain: ${dayFive}%<br>Humidity: ${value.list[36].main.humidity}%<br>Cloudiness: ${value.list[36].clouds.all}%`;
 }
 
 metricButton.addEventListener('click', function() {

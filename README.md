@@ -39,3 +39,12 @@ Started designing Forecast Page, will complete tomorrow
 Formula for converting either temperature metrics added
 <br>
 Dropdown menu for forecast page is being planned
+<br>
+<br>
+Day 3:
+<br>
+Layout of website is complete, needs tweaking and polishing
+<br>
+Nearly completed forecast page with current weather and 5 day forecast
+<br>
+Implemented dropdown page, still needs to be fixed

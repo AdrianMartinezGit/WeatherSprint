@@ -1,9 +1,9 @@
 let availableKeyWords = [
-    "Antioch, California, United States",
-    "Airport, California, United States",
-    "Austin, California, United States",
-    "Avenue, California, United States",
-    "Los Angeles, California, United States"
+    "Antioch",
+    "Airport",
+    "Austin",
+    "Avenue",
+    "Los Angeles"
 ];
 
 const resultsBox = document.querySelector('.result-box');
@@ -16,6 +16,15 @@ searchButton.addEventListener('click', function() {
         SetCitySessionStorage(inputBox.value);
         location.reload();
     }
+});
+
+inputBox.addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        if (inputBox.value != "") {
+            SetCitySessionStorage(inputBox.value);
+            location.reload();
+        }
+      }
 });
 
 inputBox.onkeyup = function() {

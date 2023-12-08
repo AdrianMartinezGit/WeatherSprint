@@ -16,7 +16,7 @@ async function ApiCall(latitude, longitude) {
     let lat = latitude;
     let lon = longitude;
 
-    const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
+    const promise = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`);
     const data = await promise.json();
     console.log(data);
 }

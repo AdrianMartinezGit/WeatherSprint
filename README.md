@@ -41,7 +41,7 @@ Formula for converting either temperature metrics added
 Dropdown menu for forecast page is being planned
 <br>
 <br>
-Day 3:
+Day 4:
 <br>
 Layout of website is complete, needs tweaking and polishing
 <br>

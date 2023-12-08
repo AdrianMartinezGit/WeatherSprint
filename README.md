@@ -48,3 +48,6 @@ Layout of website is complete, needs tweaking and polishing
 Nearly completed forecast page with current weather and 5 day forecast
 <br>
 Implemented dropdown page, still needs to be fixed
+<br>
+<br>
+Day 5 (Final Day):
